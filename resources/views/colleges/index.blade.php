@@ -1,4 +1,3 @@
-<!-- resources/views/colleges/index.blade.php -->
 @extends('layouts.master')
 
 @section('content')
@@ -8,6 +7,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Address</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -15,8 +15,8 @@
             @foreach($colleges as $college)
                 <tr>
                     <td>{{ $college->name }}</td>
+                    <td>{{ $college->address }}</td>
                     <td>
-                        <a href="{{ route('colleges.show', $college) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('colleges.edit', $college) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('colleges.destroy', $college) }}" method="POST" style="display:inline;">
                             @csrf

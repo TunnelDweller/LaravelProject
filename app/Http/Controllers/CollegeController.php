@@ -7,39 +7,32 @@ use Illuminate\Http\Request;
 
 class CollegeController extends Controller
 {
-    public function index()
-    {
-        $colleges = College::all();
-        return view('colleges.index', compact('colleges'));
-    }
-
+    // Show form to create a new college
     public function create()
     {
         return view('colleges.create');
     }
 
+    // Store a new college in the database
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:colleges',
+            'name' => 'required|unique:colleges,name',
             'address' => 'required',
         ]);
 
         College::create($request->all());
 
-        return redirect()->route('colleges.index')->with('success', 'College added successfully!');
+        return redirect()->route('colleges.index')->with('success', 'College added!');
     }
 
-    public function show(College $college)
-    {
-        return view('colleges.show', compact('college'));
-    }
-
+    // Show form to edit an existing college
     public function edit(College $college)
     {
         return view('colleges.edit', compact('college'));
     }
 
+    // Update an existing college in the database
     public function update(Request $request, College $college)
     {
         $request->validate([
@@ -50,11 +43,5 @@ class CollegeController extends Controller
         $college->update($request->all());
 
         return redirect()->route('colleges.index')->with('success', 'College updated!');
-    }
-
-    public function destroy(College $college)
-    {
-        $college->delete();
-        return redirect()->route('colleges.index')->with('success', 'College deleted!');
     }
 }
