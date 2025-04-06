@@ -1,3 +1,5 @@
+<!-- resources/views/colleges/create.blade.php -->
+
 @extends('layouts.master')
 
 @section('content')

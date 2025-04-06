@@ -1,10 +1,10 @@
+<!-- resources/views/colleges/edit.blade.php -->
+
 @extends('layouts.master')
 
-@section('title', 'Edit College')
-
 @section('content')
-<div class="container mt-4">
     <h2>Edit College</h2>
+
     <form action="{{ route('colleges.update', $college) }}" method="POST">
         @csrf
         @method('PUT')
@@ -19,7 +19,6 @@
             <input type="text" class="form-control" name="address" value="{{ old('address', $college->address) }}" required>
         </div>
 
-        <button type="submit" class="btn btn-warning">Update</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
-</div>
 @endsection

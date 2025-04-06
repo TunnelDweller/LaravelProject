@@ -6,6 +6,7 @@
     @include('partials.filter')
 
     <a href="{{ route('students.create') }}" class="btn btn-primary mb-3">Add Student</a>
+    <a href="{{ route('colleges.create') }}" class="btn btn-secondary mb-3">Add College</a>
     <table class="table table-bordered">
         <thead>
             <tr>
