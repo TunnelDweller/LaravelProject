@@ -23,6 +23,21 @@
                 @endforeach
             </select>
         </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" value="{{ old('email', $student->email ?? '') }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" name="phone" value="{{ old('phone', $student->phone ?? '') }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" name="dob" value="{{ old('dob', $student->dob ?? '') }}">
+        </div>
+
 
         <button type="submit" class="btn btn-success">Save</button>
     </form>

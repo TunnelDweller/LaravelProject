@@ -5,6 +5,7 @@
 @section('content')
 <div class="container mt-4">
     <h2>Add Student</h2>
+<<<<<<< HEAD
     <form action="{{ route('students.store') }}" method="POST">
         @csrf
         <div class="mb-3">
@@ -38,5 +39,20 @@
 
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
+=======
+
+    {{-- show validation errors --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    @include('students.form')
+>>>>>>> partial_views
 </div>
 @endsection
