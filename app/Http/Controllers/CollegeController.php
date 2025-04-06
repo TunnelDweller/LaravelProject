@@ -29,7 +29,7 @@ class CollegeController extends Controller
         ]);
 
         College::create($request->all());  // Save the new college
-        return redirect()->route('colleges.index')->with('success', 'College added!');
+        return redirect()->route('colleges.index')->with('success', 'College added!'); // Does not work should show college created message
     }
 
     // Show a single college's details
@@ -53,13 +53,13 @@ class CollegeController extends Controller
         ]);
 
         $college->update($request->all());  // Update college details
-        return redirect()->route('colleges.index')->with('success', 'College updated!');
+        return redirect()->route('colleges.index')->with('success', 'College updated!'); // Does not work should show college updated message
     }
 
     // Delete a college
     public function destroy(College $college)
     {
         $college->delete();  // Delete college
-        return redirect()->route('colleges.index')->with('success', 'College deleted!');
+        return redirect()->route('colleges.index')->with('success', 'College deleted!'); // Does not work should show college deletion message
     }
 }
