@@ -32,6 +32,7 @@ class StudentController extends Controller
         $colleges = College::all();
         return view('students.create', compact('colleges'));
     }
+    
 
     public function store(Request $request)
     {
