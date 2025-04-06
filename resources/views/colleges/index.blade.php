@@ -5,7 +5,11 @@
 @section('content')
     <h2>Colleges</h2>
 
-    <a href="{{ route('colleges.create') }}" class="btn btn-primary mb-3">Add College</a>
+    <div class="mb-3">
+        <a href="{{ route('colleges.create') }}" class="btn btn-primary">Add College</a>
+        <a href="{{ route('students.create') }}" class="btn btn-secondary">Add Student</a>
+    </div>
+
 
     <table class="table table-bordered">
         <thead>
